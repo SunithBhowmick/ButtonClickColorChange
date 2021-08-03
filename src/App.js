@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from 'react'
 
-function App() {
+export default function App() {
+  const [state, setstate] = useState('red')
+  const [key, setKey] = useState('Hello')
+
+ const keyChange=()=>{
+  setstate('green');
+  setKey('button press')
+
+ }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <div style={{justifyContent:'center', alignItems:'center', height: '100vh'}}>
+      <div style={{background:state,width:'20%', height:'40%',padding:50,marginTop:'10%',marginLeft:'30%',}} >
+        <h1 style={{textAlign:'center'}}>{key}</h1>
+       
+      </div>
+      <br/>
+      <button style={{marginLeft:'40%',backgroundColor:'blue'}} onClick={keyChange}>Press</button>
 
-export default App;
+    </div>
+  )
+}
+// position:'absolute',top: "50%",left: "50%",bottom: "20%",right: "20%",textalign: 'center'
